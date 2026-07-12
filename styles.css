@@ -5,5 +5,10 @@ td {
   padding-left: 30px;
   padding-right: 40px;
 }
-
-/* Padding for table*/
+table {
+  border-spacing: 30px;
+}
+/* Color change hover links*/
+a:hover {
+  color: orange;
+}
