@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Quiz - Milestone Project</title>
+    <title>Quiz</title>
   </head>
   <body style="background-color:powderblue;">
     <h1>Quiz</h1>
@@ -17,8 +17,180 @@
       <a href="aboutme.html">About Me</a> |
       <a href="quiz.html">Quiz</a>
     </nav>
-    
     <main>
+  
+    <h2 style="color:Beige;"Interactive Quiz></h2>
+    <form id="quizForm">
+      <!-- fill in blank quesiton -->
+      <h3>Question 1.</h3>
+      <p>What company started releasing the World Wide Web into the public domain and made it a standard, which led to its widespread adoption in 1993?</p>
+      <input type="text" id="q1" name="q1">
+      
+      <!-- multiple choice quesiton -->
+      <h3>Question 2.</h3>
+      <p>What software processes HTTP and HTTPS request and allow users to communicate with websites?</p>
+      <!--- correct answer under -->
+      <input type="radio" name="q2" value="Web Server">
+      <label>Web Server</label>
+      <br>
+      <input type="radio" name="q2" value="IP Address">
+      <label>IP Address</label>
+      <br>
+      <input type="radio" name="q2" value="Web Browser">
+      <label>Web Browser</label>
+      <br>
+      <input type="radio" name="q2" value="Latency">
+      <label>Latency</label>
+      <br>
+
+        
+      <h3>Question 3.</h3>
+      <p>What's the first step in the process of how web servers operate?</p>
+      <input type="radio" name="q3" value="The server sends an HTTP response to the browser">
+      <label>The server sends an HTTP response to the browser</label>
+      <br>
+      <input type="radio" name="q3" value="The web server receives the HTTP request, then locates the requested file in its storage.">
+      <label>The web server receives the HTTP request, then locates the requested file in its storage.</label>
+      <br>
+      <!--- correct answer under -->
+      <input type="radio" name="q3" value="Client sends a request to the server">
+      <label>Client sends a request to the server</label>
+      <br>
+      <input type="radio" name="q3" value="After the browser retrieves the content, it displays the related website on the client's screen.">
+      <label>After the browser retrieves the content, it displays the related website on the client's screen.</label>
+
+
+      <h3>Question 4.</h3>
+      <p>Of the 10,000 available web servers in 1994,how many were commercial?</p>
+      <input type="radio" name="q4" value="4000">
+      <label>4000</label>
+      <br>
+      <!--- correct answer under -->
+      <input type="radio" name="q4" value="2000">
+      <label>2000</label>
+      <br>
+      <!--- correct answer under -->
+      <input type="radio" name="q4" value="5000">
+      <label>5000</label>
+      <br>
+      <input type="radio" name="q4" value="3500">
+      <label>3500</label>
+
+      <h3>Question 5.</h3>
+      <p>Choose all forms of evolution/impacts dealing with web servers.</p>
+      
+      <input type="checkbox" name="q5" value="Lower cyber-attack risk">
+      <label>Lower cyber-attack risk</label>
+      <br>
+      <input type="checkbox" name="q5" value="Makes it easier for elders to code">        
+      <label>Makes it easier for elders to code</label>
+      <br>
+      <input type="checkbox" name="q5" value="expansion of the rapidly growing cloud computing market">
+      <label>expansion of the rapidly growing cloud computing market</label>
+      <br>
+      <input type="checkbox" name="q5" value="Will cause users to be completely reliant on AI">
+      <label>Lower cyber-attack risk</label>
+      <br>
+      <input type="checkbox" name="q5" value="Web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing, and even the possible rise of serverless architecture will help lead to stronger web servers in the future.">
+      <label>web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing, and even the possible rise of serverless architecture will help lead to stronger web servers in the future.</label>
+      <br>
+      <input type="checkbox" name="q5" value="As time goes latency will continue to be high for all users">
+      <label>As time goes latency will continue to be high for all users</label>
+
+        <button type="button" onclick="gradeQuiz()">Submit</button>
+        <button type="reset" onclick="resetResults()">Reset</button>
+      
+    </form>
+    <section id="result"></section>
+      
     </main>
+
+   
+  <script>
+  // fill in blank
+  function gradeQuiz() {
+    let score = 0;
+    let q1Answer = document.querySelector("#q1").value;
+
+    if (q1Answer.toLowerCase()==="CERN") {
+      score++;
+      result += "<p style='color:green;'>Correct! Answer:CERN</p>";
+    }
+      else {
+        result += "<p style='color:red;'>Incorrect. Answer:CERN</p>";"
+      }
+    //document.getElementById("result").innerHTML =
+    //  "Total Score: " + score + "/1";
+  
+
+  //Multiple choices\
+    let q2Answer = document.querySelector("input[name="q2"]:checked');
+
+    if (q2Answer & q2Answer.value === "Web Server") {
+      score++;
+      result += "<p style='color:green;'>Correct! Answer:Web Server</p>";
+    }
+      else {
+      result += "<p style='color:red;'>Incorrect. Answer:Web Server</p>";
+      }
+    
+  
+    
+     let q3Answer = document.querySelector("input[name="q3"]:checked');
+
+    if (q3Answer & q3Answer.value === "Client sends a request to the server") {
+      score++;
+      result += "<p style='color:green;'>Correct! Answer:Client sends a request to the server</p>";
+    }
+      else {
+      result += "<p style='color:red;'>Incorrect. Answer:Client sends a request to the server</p>";
+      }
+
+
+    
+    let q4Answer = document.querySelector("input[name="q4"]:checked');
+
+    if (q4Answer & q4Answer.value === "2000") {
+      score++;
+      result += "<p style='color:green;'>Correct! Answer:2000</p>";
+    }
+      else {
+      result += "<p style='color:red;'>Incorrect. Answer:2000</p>";
+      }
+
+
+    let q5Answer = document.querySelectorAll("input[name="q5"]:checked');
+    let selectedAnswers = [];
+
+    q5Answer.forEach(function(answer) {
+      selectedAnswers.push(answer.value);
+    });
+    
+    let correctAnswers = [
+      "Lower cyber-attack risk",
+      "expansion of the rapidly growing cloud computing market",
+      "web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing,<br> and even the possible rise of serverless architecture will help lead to stronger web servers in the future."
+    ];
+
+    let q5Correct =
+      correctAnswers.every(answer => selectedAnswers.include(answer)) &&
+      selectedAnswers.length === correctedAnswers.length;
+
+    if (q5Correct) {
+      score++;
+      results += "<p style='color:green;'>Correct!</p>";
+    }
+    else {
+      result += "<p style='color:red;'>Incorrect. Correct choices:"Lower cyber-attack risk",
+      "expansion of the rapidly growing cloud computing market",
+      "web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing,<br> and even the possible rise of serverless architecture will help lead to stronger web servers in the future.</p>";
+    }
+
+    function resetResults() {
+      document.querySelector("#result").innerHTML = "";
+    }
+    
+  </script>
+    
   </body>
 </html>
