@@ -96,6 +96,7 @@
       <br>
       <input type="checkbox" name="q5" value="As time goes latency will continue to be high for all users">
       <label>As time goes latency will continue to be high for all users</label>
+        <!-- give usable submit and reset button at bottom of quiz-->
 
         <button type="button" onclick="gradeQuiz()">Submit</button>
         <button type="reset" onclick="resetResults()">Reset</button>
@@ -107,7 +108,7 @@
 
    
   <script>
-  // fill in blank
+  // fill in blank if correct answer will show green and display,if not it'll show red then display correct answer
   function gradeQuiz() {
     let score = 0;
     let totalQuestion = 5;
@@ -120,8 +121,7 @@
       else {
         result += "<p style='color:red;'>Incorrect. Answer:CERN</p>";"
       }
-    //document.getElementById("result").innerHTML =
-    //  "Total Score: " + score + "/1";
+ 
   
 
   //Multiple choices\
