@@ -110,6 +110,7 @@
   // fill in blank
   function gradeQuiz() {
     let score = 0;
+    let totalQuestion = 5;
     let q1Answer = document.querySelector("#q1").value;
 
     if (q1Answer.toLowerCase()==="CERN") {
@@ -189,6 +190,8 @@
     function resetResults() {
       document.querySelector("#result").innerHTML = "";
     }
+
+    "<h2>Your final score is: " + score + " / " + totalQuestions + "</h2>" + resultMessage + results;
     
   </script>
     
