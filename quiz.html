@@ -189,6 +189,14 @@
       "web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing,<br> and even the possible rise of serverless architecture will help lead to stronger web servers in the future.</p>";
     }
 
+    let resultMessage;
+
+    if (score >= 3) {
+      resultMessage = "<h2 style='color:green;'>PASS<h2>";
+    } else {
+      resultMessage = "<h2 style='color:red;'<">FAIL</h2>";
+    }
+
     document.querySelector("#result").innerHTML =
       resultMessage +
     "<h2>Your final score is: " + score + " / " + totalQuestions + "</h2>" + resultMessage + results;
