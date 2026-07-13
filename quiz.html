@@ -19,7 +19,7 @@
     </nav>
     <main>
   
-    <h2 style="color:Beige;"Interactive Quiz></h2>
+    <h2 style="color:Beige;">Interactive Quiz</h2>
     <form id="quizForm">
       <!-- fill in blank quesiton -->
       <h3>Question 1.</h3>
@@ -112,9 +112,11 @@
   function gradeQuiz() {
     let score = 0;
     let totalQuestion = 5;
-    let q1Answer = document.querySelector("#q1").value;
+    let results = "";
 
-    if (q1Answer.toLowerCase()==="CERN") {
+    let q1Answer = document.querySelector("#q1"].value;
+
+    if (q1Answer.toLowerCase()==="cern") {
       score++;
       result += "<p style='color:green;'>Correct! Answer:CERN</p>";
     }
@@ -187,11 +189,13 @@
       "web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing,<br> and even the possible rise of serverless architecture will help lead to stronger web servers in the future.</p>";
     }
 
+    document.querySelector("#result").innerHTML =
+      resultMessage +
+    "<h2>Your final score is: " + score + " / " + totalQuestions + "</h2>" + resultMessage + results;
+
     function resetResults() {
       document.querySelector("#result").innerHTML = "";
     }
-
-    "<h2>Your final score is: " + score + " / " + totalQuestions + "</h2>" + resultMessage + results;
     
   </script>
     
