@@ -107,62 +107,62 @@
     </main>
 
    
-  <script>
+   <script>
   // fill in blank if correct answer will show green and display,if not it'll show red then display correct answer
   function gradeQuiz() {
     let score = 0;
-    let totalQuestion = 5;
+    let totalQuestions = 5;
     let results = "";
 
-    let q1Answer = document.querySelector("#q1"].value;
+    let q1Answer = document.querySelector("#q1").value;
 
     if (q1Answer.toLowerCase()==="cern") {
       score++;
-      result += "<p style='color:green;'>Correct! Answer:CERN</p>";
+      results += "<p style='color:green;'>Correct! Answer:CERN</p>";
     }
       else {
-        result += "<p style='color:red;'>Incorrect. Answer:CERN</p>";"
+        results += "<p style='color:red;'>Incorrect. Answer:CERN</p>";
       }
  
   
 
-  //Multiple choices\
-    let q2Answer = document.querySelector("input[name="q2"]:checked');
+  //Multiple choices
+    let q2Answer = document.querySelector("input[name='q2']:checked");
 
-    if (q2Answer & q2Answer.value === "Web Server") {
+    if (q2Answer && q2Answer.value === "Web Server") {
       score++;
-      result += "<p style='color:green;'>Correct! Answer:Web Server</p>";
+      results += "<p style='color:green;'>Correct! Answer:Web Server</p>";
     }
       else {
-      result += "<p style='color:red;'>Incorrect. Answer:Web Server</p>";
+      results += "<p style='color:red;'>Incorrect. Answer:Web Server</p>";
       }
     
   
     
-     let q3Answer = document.querySelector("input[name="q3"]:checked');
+     let q3Answer = document.querySelector("input[name='q3']:checked");
 
-    if (q3Answer & q3Answer.value === "Client sends a request to the server") {
+    if (q3Answer && q3Answer.value === "Client sends a request to the server") {
       score++;
-      result += "<p style='color:green;'>Correct! Answer:Client sends a request to the server</p>";
+      results += "<p style='color:green;'>Correct! Answer:Client sends a request to the server</p>";
     }
       else {
-      result += "<p style='color:red;'>Incorrect. Answer:Client sends a request to the server</p>";
+      results += "<p style='color:red;'>Incorrect. Answer:Client sends a request to the server</p>";
       }
 
 
     
-    let q4Answer = document.querySelector("input[name="q4"]:checked');
+    let q4Answer = document.querySelector("input[name='q4']:checked");
 
-    if (q4Answer & q4Answer.value === "2000") {
+    if (q4Answer && q4Answer.value === "2000") {
       score++;
-      result += "<p style='color:green;'>Correct! Answer:2000</p>";
+      results += "<p style='color:green;'>Correct! Answer:2000</p>";
     }
       else {
-      result += "<p style='color:red;'>Incorrect. Answer:2000</p>";
+      results += "<p style='color:red;'>Incorrect. Answer:2000</p>";
       }
 
 
-    let q5Answer = document.querySelectorAll("input[name="q5"]:checked');
+    let q5Answer = document.querySelectorAll("input[name='q5']:checked");
     let selectedAnswers = [];
 
     q5Answer.forEach(function(answer) {
@@ -172,38 +172,38 @@
     let correctAnswers = [
       "Lower cyber-attack risk",
       "expansion of the rapidly growing cloud computing market",
-      "web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing,<br> and even the possible rise of serverless architecture will help lead to stronger web servers in the future."
+      "web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing,<br> and even the possible rise of server[...]"
     ];
 
     let q5Correct =
-      correctAnswers.every(answer => selectedAnswers.include(answer)) &&
-      selectedAnswers.length === correctedAnswers.length;
+      correctAnswers.every(answer => selectedAnswers.includes(answer)) &&
+      selectedAnswers.length === correctAnswers.length;
 
     if (q5Correct) {
       score++;
       results += "<p style='color:green;'>Correct!</p>";
     }
     else {
-      result += "<p style='color:red;'>Incorrect. Correct choices:"Lower cyber-attack risk",
-      "expansion of the rapidly growing cloud computing market",
-      "web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing,<br> and even the possible rise of serverless architecture will help lead to stronger web servers in the future.</p>";
+      results += "<p style='color:red;'>Incorrect. Correct choices: Lower cyber-attack risk, expansion of the rapidly growing cloud computing market, web servers will also see faster responses as time goes on and developers continue to improve their work. The new use of AI integration, Edge computing, and even the possible rise of server[...]</p>";
     }
 
     let resultMessage;
 
     if (score >= 3) {
-      resultMessage = "<h2 style='color:green;'>PASS<h2>";
+      resultMessage = "<h2 style='color:green;'>PASS</h2>";
     } else {
-      resultMessage = "<h2 style='color:red;'<">FAIL</h2>";
+      resultMessage = "<h2 style='color:red;'>FAIL</h2>";
     }
 
     document.querySelector("#result").innerHTML =
       resultMessage +
-    "<h2>Your final score is: " + score + " / " + totalQuestions + "</h2>" + resultMessage + results;
+    "<h2>Your final score is: " + score + " / " + totalQuestions + "</h2>" + results;
 
-    function resetResults() {
-      document.querySelector("#result").innerHTML = "";
-    }
+  }
+
+  function resetResults() {
+    document.querySelector("#result").innerHTML = "";
+  }
     
   </script>
     
